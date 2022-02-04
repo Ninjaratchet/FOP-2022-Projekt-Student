@@ -18,6 +18,9 @@ public interface Pizza extends Saucable {
     }
 
 
+    /**
+     * Nested interface that represents the specific configuration of a pizza.
+     */
     interface Config extends Saucable.Config{
 
         /**

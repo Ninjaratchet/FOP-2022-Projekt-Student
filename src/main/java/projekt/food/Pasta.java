@@ -1,5 +1,7 @@
 package projekt.food;
 
+import java.util.function.DoubleUnaryOperator;
+
 public interface Pasta extends Saucable{
 
     /**
@@ -12,5 +14,17 @@ public interface Pasta extends Saucable{
      */
     interface Variant extends Saucable.Variant{
         double getBaseThickness();
+    }
+
+    interface Config extends Food.Config{
+        /**
+         * @param unaryOperator which method apply takes and returns a Double
+         */
+        void thickness(DoubleUnaryOperator unaryOperator);
+
+        /**
+         * @return a UnaryOperator which is the concatenated function of all functions given to thickness method
+         */
+        DoubleUnaryOperator getThicknessMutator();
     }
 }

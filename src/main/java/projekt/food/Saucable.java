@@ -1,5 +1,7 @@
 package projekt.food;
 
+import java.util.function.UnaryOperator;
+
 public interface Saucable extends Food{
 
     /**
@@ -12,5 +14,20 @@ public interface Saucable extends Food{
      */
     interface Variant extends Food.Variant<Saucable, Food.Config>{
         String getBaseSauce();
+    }
+
+
+
+    interface Config extends Food.Config{
+
+        /**
+         * @param unaryOperator which method apply takes and returns a string
+         */
+        void sauce(UnaryOperator<String> unaryOperator);
+
+        /**
+         * @return a UnaryOperator which is the concatenated function of all functions given to sauce method
+         */
+        UnaryOperator<String> getSauceMutator();
     }
 }

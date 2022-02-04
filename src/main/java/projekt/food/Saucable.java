@@ -17,7 +17,9 @@ public interface Saucable extends Food{
     }
 
 
-
+    /**
+     * Nested interface that represents the specific configuration of the sauce
+     */
     interface Config extends Food.Config{
 
         /**

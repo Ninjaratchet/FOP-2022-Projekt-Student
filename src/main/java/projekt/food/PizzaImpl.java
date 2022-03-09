@@ -2,6 +2,8 @@ package projekt.food;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.function.DoubleUnaryOperator;
+import java.util.function.UnaryOperator;
 
 public class PizzaImpl extends AbstractSaucable implements Pizza{
     private final double diameter;
@@ -19,6 +21,39 @@ public class PizzaImpl extends AbstractSaucable implements Pizza{
         super(sauce, price, weight, variant, extras);
         this.diameter = diameter;
 
+    }
+
+    private static class Config implements Saucable.Config {
+
+        @Override
+        public void price(UnaryOperator<BigDecimal> priceMutator) {
+
+        }
+
+        @Override
+        public UnaryOperator<BigDecimal> getPriceMutator() {
+            return null;
+        }
+
+        @Override
+        public void weight(DoubleUnaryOperator weightMutator) {
+
+        }
+
+        @Override
+        public DoubleUnaryOperator getWeightMutator() {
+            return null;
+        }
+
+        @Override
+        public void sauce(UnaryOperator<String> unaryOperator) {
+
+        }
+
+        @Override
+        public UnaryOperator<String> getSauceMutator() {
+            return null;
+        }
     }
 
 

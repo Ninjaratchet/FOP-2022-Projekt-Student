@@ -17,6 +17,9 @@ public interface IceCream extends Food{
         String getBaseFlavor();
     }
 
+    /**
+     * Nested interface that represents specific config of icecream.
+     */
     interface Config extends Food.Config{
         /**
          * @param unaryOperator which method apply takes and returns a string

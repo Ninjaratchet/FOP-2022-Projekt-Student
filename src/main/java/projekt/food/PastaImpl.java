@@ -5,6 +5,25 @@ import java.util.List;
 
 public class PastaImpl extends AbstractSaucable implements Pasta{
     private double thickness;
+
+    /**
+     * Constructor sets attributes to values given in parameters.
+     * @param thickness of noodles
+     * @param sauce with the pasta
+     * @param price of pasta
+     * @param weight of pasta
+     * @param variant of pasta or plain pasta
+     * @param extras served with the pasta
+     */
+    public PastaImpl(double thickness, String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras) {
+        this.thickness = thickness;
+        this.sauce = sauce;
+        this.price = price;
+        this.weight = weight;
+        this.variant = variant;
+        this.extras = extras;
+    }
+
     /**
      * {@inheritDoc}
      * @return the price of the pasta

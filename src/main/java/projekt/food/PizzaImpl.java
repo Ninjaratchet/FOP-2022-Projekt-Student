@@ -6,6 +6,24 @@ import java.util.List;
 public class PizzaImpl extends AbstractSaucable implements Pizza{
     private double diameter;
 
+    /**
+     * Constructor sets attributes to values from parameters.
+     * @param diameter of pizza circle
+     * @param sauce served on top the pizza
+     * @param price of the pizza
+     * @param weight of the pizza
+     * @param variant of the pizza
+     * @param extras served with the specific pizza
+     */
+    public PizzaImpl(double diameter, String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras) {
+        this.diameter = diameter;
+        this.sauce = sauce;
+        this.price = price;
+        this.weight = weight;
+        this.variant = variant;
+        this.extras = extras;
+    }
+
 
     /**
      * {@inheritDoc}

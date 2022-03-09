@@ -16,6 +16,9 @@ public interface Pasta extends Saucable{
         double getBaseThickness();
     }
 
+    /**
+     * Nested interface that represents the specific configuration of Pasta.
+     */
     interface Config extends Food.Config{
         /**
          * @param unaryOperator which method apply takes and returns a Double

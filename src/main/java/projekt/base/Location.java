@@ -1,8 +1,8 @@
 package projekt.base;
 
 public class Location {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     /**
      * Constructs a Location by assigning the x and y coordinates.

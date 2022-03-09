@@ -5,6 +5,8 @@ import java.util.function.Consumer;
 public class ExtraImpl<C extends Food.Config> implements Extra<C>{
     private final String name;
     private final int priority;
+    //TODO check later for correctness
+    //generic unsicher : Maximale Möglichkeiten an Inputs sollen mit dem Consumer ermöglicht werden.
     private final Consumer<C> configMutator;
 
 

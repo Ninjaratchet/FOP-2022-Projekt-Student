@@ -6,8 +6,8 @@ import java.time.temporal.TemporalAmount;
 import java.time.temporal.TemporalField;
 
 public class TimeInterval {
-    private LocalDateTime start;
-    private LocalDateTime end;
+    private final LocalDateTime start;
+    private final LocalDateTime end;
 
     /**
      * Constructs TimeInterval object by assigning start and end

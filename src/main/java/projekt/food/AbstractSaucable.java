@@ -7,6 +7,8 @@ import java.util.List;
  * This abstract class contains the attributes being the same in PizzaImpl and PastaImpl.
  */
 public abstract class AbstractSaucable implements Saucable{
+
+
     protected String sauce;
     protected BigDecimal price;
     protected double weight;

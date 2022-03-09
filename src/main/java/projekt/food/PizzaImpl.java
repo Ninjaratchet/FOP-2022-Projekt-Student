@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class PizzaImpl extends AbstractSaucable implements Pizza{
-    private double diameter;
+    private final double diameter;
 
     /**
      * Constructor sets attributes to values from parameters.
@@ -16,12 +16,9 @@ public class PizzaImpl extends AbstractSaucable implements Pizza{
      * @param extras served with the specific pizza
      */
     public PizzaImpl(double diameter, String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras) {
+        super(sauce, price, weight, variant, extras);
         this.diameter = diameter;
-        this.sauce = sauce;
-        this.price = price;
-        this.weight = weight;
-        this.variant = variant;
-        this.extras = extras;
+
     }
 
 

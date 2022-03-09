@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class PastaImpl extends AbstractSaucable implements Pasta{
-    private double thickness;
+    private final double thickness;
 
     /**
      * Constructor sets attributes to values given in parameters.
@@ -16,12 +16,9 @@ public class PastaImpl extends AbstractSaucable implements Pasta{
      * @param extras served with the pasta
      */
     public PastaImpl(double thickness, String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras) {
+        super(sauce, price, weight, variant, extras);
         this.thickness = thickness;
-        this.sauce = sauce;
-        this.price = price;
-        this.weight = weight;
-        this.variant = variant;
-        this.extras = extras;
+
     }
 
     /**

@@ -6,7 +6,7 @@ public class ExtraImpl<C extends Food.Config> implements Extra<C>{
     private final String name;
     private final int priority;
     //TODO check later for correctness
-    //generic unsicher : Maximale Möglichkeiten an Inputs sollen mit dem Consumer ermöglicht werden.
+    //(Max) generic unsicher : Maximale Möglichkeiten an Inputs sollen mit dem Consumer ermöglicht werden.
     private final Consumer<C> configMutator;
 
 
@@ -40,7 +40,7 @@ public class ExtraImpl<C extends Food.Config> implements Extra<C>{
         return priority;
     }
 
-    /** //TODO check this javadoc once better understanding has been gained
+    /** //TODO (Max) check this javadoc once better understanding has been gained
      * Method that applies the extra, by using the predefined consumer.
      * @param config the food configuration which is going to be applied.
      */

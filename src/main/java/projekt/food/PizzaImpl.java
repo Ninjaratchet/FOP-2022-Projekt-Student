@@ -15,7 +15,7 @@ public class PizzaImpl extends AbstractSaucable implements Pizza{
      * @param variant of the pizza
      * @param extras served with the specific pizza
      */
-    public PizzaImpl(double diameter, String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras) {
+    public PizzaImpl(double diameter, String sauce, BigDecimal price, double weight, Pizza.Variant variant, List<Extra<?>> extras) {
         super(sauce, price, weight, variant, extras);
         this.diameter = diameter;
 

@@ -4,7 +4,23 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class PastaImpl extends AbstractSaucable implements Pasta{
-    private double thickness;
+    private final double thickness;
+
+    /**
+     * constructs an object of type PastaImpl with the given attributes
+     * @param sauce sauce of the pasta
+     * @param price base price of the pasta
+     * @param weight base weight of the pasta
+     * @param variant variant of the dish
+     * @param extras extra ingredients in the pasta
+     * @param thickness thickness of the pasta
+     */
+    public PastaImpl(String sauce, BigDecimal price, double weight, Saucable.Variant variant, List<Extra<?>> extras, double thickness) {
+        // (Thomas) ich bezweifle, dass saucable.variant als typ für variant richtig ist
+        super(sauce, price, weight, variant, extras);
+        this.thickness=thickness;
+    }
+
     /**
      * {@inheritDoc}
      * @return the price of the pasta

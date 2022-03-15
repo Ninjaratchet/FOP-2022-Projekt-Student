@@ -7,6 +7,8 @@ public class ExtraImpl<C extends Food.Config> implements Extra<C>{
     private final int priority;
     //TODO check later for correctness
     //(Max) generic unsicher : Maximale Möglichkeiten an Inputs sollen mit dem Consumer ermöglicht werden.
+    //(Thomas) Ich glaube, man soll "? super Food.Config" statt dem C einfügen, also
+    //private final Consumer<? super Food.Config> configMutator;
     private final Consumer<C> configMutator;
 
 

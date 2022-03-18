@@ -1,9 +1,13 @@
 package projekt.food;
 
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Extras to add to a configuration of a specific food type.
@@ -192,6 +196,36 @@ public final class Extras {
         ALL.put("Chocolate Sprinkles", CHOCOLATE_SPRINKLES);
         ALL.put("Caramel Sauce", CARAMEL_SAUCE);
     }
+    //H2.8 Comparison needs testing on  1. correct order and general functionality
+    /**
+     * Takes a list of extras, sorts it and applies each element (extra.apply(config c) using the config.
+     * @param config the config which is used to apply the extra
+     * @param extras list with all the extras that should be used
+     * @param <C> the type of config
+     */
+    public static<C extends Food.Config> void writeToConfig (C config, List<? extends Extra<C>> extras){
+        Stream<? extends Extra<C>> sorted = extras.stream().sorted(new Comparator<Extra<? extends C>>() {
+            /**
+             * Compares to extras o1 and o2, sorting by both priority (first)
+             * and name second (if priority of o1 equals priority of o2).
+             * @param o1 first extra
+             * @param o2 second extra
+             * @return negative number if o1 should be first (I think) and positive number otherwise
+             */
+            @Override
+            public int compare(Extra<? extends C> o1, Extra<? extends C> o2) {
+                if (o1.getPriority() == o2.getPriority()){
+                    return o1.getName().compareTo(o2.getName());
+                }
+                return o1.getPriority() - o2.getPriority();
+            }
+        });
+        extras = sorted.collect(Collectors.toList());
+        extras.forEach(e -> e.apply(config));
+        //extras.forEach(System.out::println);
+
+    }
+
 
 
 }
